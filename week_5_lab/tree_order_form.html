@@ -50,14 +50,8 @@
 
     <h2>Order Summary</h2>
 
-    <p id="order-summary">       
-            <script>
-                
-                document.querySelector("#order-summary").innerHTML = `Homeowner Name: ${name} Address: ${houseNumber}
-                    ${streetName} ${city}, ${state} ${zipCode} Tree Type: ${treeType}`
+    <p id="order-summary">     
 
-            </script>
-            
         <!-- Use JavaScript to display the order information, 
             if all the required information is entered  -->
     </p>
@@ -65,20 +59,14 @@
 
 
 <script>
-
     let homeownerNameInput = document.querySelector('#homeowner-name')
     let homeownerHouseNumberInput = document.querySelector('#homeowner-house-number')
     let homeownerStreetNameInput = document.querySelector('#homeowner-street-name')
-    let treeTypeSelect = document.querySelector('#tree-type')
-    
-    // create a variable for city input element
-    // create a variable for zip code input element
+    let treeTypeSelection = document.querySelector('#tree-type')
     let cityName = document.querySelector('#city')
-    let zipcodeInput = document.querySelector('#zipcode')
-   
-    
+    let zipCodeInput = document.querySelector('#zipcode')
+     
     let submitButton = document.querySelector('#submit-order')
-
     let orderSummaryParagraph = document.querySelector('#order-summary')
 
     submitButton.addEventListener('click', function() {
@@ -86,19 +74,16 @@
         let name = homeownerNameInput.value 
         let houseNumber = homeownerHouseNumberInput.value
         let streetName = homeownerStreetNameInput.value
-        let treeType = treeTypeSelect.value
-
-        // get the value from the input#city
-        // get the value from the input#zipcode
+        let treeType = treeTypeSelection.value
         let city = cityName.value
-        let zipcode = zipcodeInput.value
+        let zipCode = zipCodeInput.value
       
         // create array to hold all the errors checked for in validation
         let errors = [] 
 
         // Validate that all six input and select elements have been completed
         if (!name) {
-            errors.push('Enter a student name')
+            errors.push('Enter a name')
         }
 
         if (!houseNumber) {
@@ -110,19 +95,19 @@
         }
 
         if (treeType == "") {
-            error('Select a tree type')
+            errors.push('Select a tree type')
         }
 
         if (!cityName) {
-            error('Enter a city name')
+            errors.push('Enter a city name')
         }
 
-        if (!zipcode) {
+        if (!zipCode) {
             errors.push('Enter a zipcode')
         }
 
         // TODO Validate the zipcode is in the range 55001 and 56763. This will check that the zip code is in Minnesota.
-        if (zipcode <55001 || zipcode > 56763) {
+        if (zipCode <55001 || zipcode > 56763) {
             errors.push('Enter a valid Minnesota zipcode')
         }
 
@@ -141,8 +126,10 @@
 
 
         // TODO - If there are no errors, use a template string to display an order summary in the order summary paragraph
-        document.querySelector("#order-summary").innerHTML = `Homeowner Name: ${name} Address: ${houseNumber}
-                    ${streetName} ${city}, ${state} ${zipCode} Tree Type: ${treeType}`
+        let summary =  `Homeowner Name: ${name} Address: ${houseNumber} ${streetName} ${city}, Minnesota ${zipCode} 
+            Tree Type: ${treeType}`
+
+        orderSummaryParagraph.innerHTML = summary
         
         
     })
