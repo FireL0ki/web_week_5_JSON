@@ -69,10 +69,26 @@ let cats_and_owners = [
   { name: "Snoop Dogg", cat: "Miles Davis" }
 ]
 
-// TODO print Gary Oldman's cat's name
-// TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
-// TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
+console.log("Print Gary Oldman's cat's name: ")
+let garyCat = cats_and_owners[1].cat
+//print Gary Oldman's cat's name
+console.log(garyCat)
 
+// Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
+cats_and_owners.push({name: "Taylor Swift", cat: "Meredith"})
+
+// write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
+let catOwnerArray = cats_and_owners
+let catOwnerList = []
+catOwnerArray.forEach( function( catOwnerPair) {
+  let humanName = catOwnerPair.name
+  let catName = catOwnerPair.cat
+  catOwnerList.push(humanName)
+  catOwnerList.push(catName)
+  let catNameHumanName = (humanName + ', ' + catName)
+
+  console.log(catNameHumanName)
+})
 
 
 
