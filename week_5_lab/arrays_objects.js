@@ -17,8 +17,8 @@ let iss_location = {
   "message": "success"
 }
 
-// TODO Extract the latitude value, and log it to the console.
-// TODO Extract the longitude value, and log it to the console
+// Extract the latitude value, and log it to the console.
+// Extract the longitude value, and log it to the console
 
 let latitude = iss_location.iss_position.latitude
 console.log(`Latitude: ${latitude}`)
@@ -53,7 +53,7 @@ console.log(myMoney + ' Euros is equivalent to ' + exchangedforAustralian + ' Au
 
 
 
-// TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
+// write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
 
 
@@ -225,10 +225,19 @@ let nobel_prize_winners_2017 = {
 
 // TODO print the full name of the Literature Nobel laureate.
 
+let fullList = nobel_prize_winners_2017.prizes[0]
+console.log("Full List: " + fullList) // check / view
+
+let literatureAwardInfo = fullList[3]
+console.log("Prizes[0]: " + prizeInfo)
+
+let literatureLaureate = literatureAwardInfo
+console.log("Literature Laureate Info: " + literatureLaureate)
 
 
-let litlaureateFirstName = nobel_prize_winners_2017.prizes[3].laureates.firstname
-let litLaureateSurname = nobel_prize_winners_2017.prizes[3].laureates.surname
+
+let litlaureateFirstName = nobel_prize_winners_2017.prizes[0].laureates.firstname
+let litLaureateSurname = nobel_prize_winners_2017.prizes[0].laureates.surname
 
 console.log("The literature Nobel Laureate in 2017 was: " + litlaureateFirstName + ' ' + litLaureateSurname)
 

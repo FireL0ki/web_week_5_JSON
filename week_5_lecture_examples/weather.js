@@ -52,15 +52,19 @@ let weather = {
 }
 
 // Extract current temperature, step-by-step
+console.log("weather.list")
 let weatherList = weather.list
 console.log(weatherList)
 
+console.log('LOOK HERE The first array within the object "list" ')
 let weatherInfo = weatherList[0]
 console.log(weatherInfo)
 
+console.log('This is the information inside "main"; the first object within the array "list"')
 let main = weatherInfo.main
 console.log(main)
 
+console.log('This is inside the array main, now we have grabbed the value at the key "main"')
 let currentTemp = main.temp
 console.log(currentTemp)    // and there's the temp!
 
